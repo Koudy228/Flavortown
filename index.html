@@ -10,49 +10,83 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <div class="cela_navi">
-        <img src="./obrazky/Logo.png" class="logo">
+        <img src="./obrazky/Logo.png" class="logo" alt="3BComputer logo">
+
         <div class="nav">
-            <a class="navi">Úvod</a>
-            <a class="navi">O nás</a>
-            <a class="navi">Nabídka</a>
-            <a class="navi">Akce</a>
-            <a class="navi">Kontakt</a>
+            <a class="navi" href="#uvod">Úvod</a>
+            <a class="navi" href="#o-nas">O nás</a>
+            <a class="navi" href="#nabidka">Nabídka</a>
+            <a class="navi" href="#akce">Akce</a>
+            <a class="navi" href="#kontakt">Kontakt</a>
         </div>
 
-        <div class="menu_btn">
+        <div class="menu_btn" aria-label="Otevřít menu" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="page">
+        <section id="uvod">
+            <h1 class
+
+    <!-- NAV -->
+    <div class="cela_navi">
+        <img src="./obrazky/Logo.png" class="logo" alt="3BComputer logo">
+
+        <nav class="nav">
+            <a class="navi" href="#uvod">Úvod</a>
+            <a class="navi" href="#o-nas">O nás</a>
+            <a class="navi" href="#nabidka">Nabídka</a>
+            <a class="navi" href="#akce">Akce</a>
+            <a class="navi" href="#kontakt">Kontakt</a>
+        </nav>
+
+        <div class="menu_btn" aria-label="Otevřít menu" role="button" tabindex="0">
             <span></span>
             <span></span>
             <span></span>
         </div>
     </div>
 
-    <h1 class="uvod_nad">3BComputer - spolehlivý partner pro vaše IT a internet</h1>
-    <div class="uvod_float">
-        <img src="./obrazky/stolni_pc.webp" class="uvod_obr">
+    <!-- PAGE -->
+    <main class="page">
 
-        <p class="uvod_pod">
-            Vítej na webu 3BComputer, s.r.o., odborníků na výpočetní techniku a internet ve Svitavách. 
-            Ať už potřebujete nový počítač, nastavit internet nebo spravit zanedbaný notebook, máme to pod kontrolou.
-        </p>
-    </div>
-    <div class="obdelniky">
-        <h3>O nás</h3>
-        <p>Lokální IT firma ze Svitav zaměřená na prodej a servis techniky. Rychlá pomoc a srozumitelný přístup.</p>
-    </div>
-    <div class="obdelniky">
-        <h3>Nabídka</h3>
-        <p>Servis počítačů, připojení k internetu a moderní komunikační služby na jednom místě. Postaráme se o techniku, aby fungovala a neotravovala vás.</p>
-    </div>
-    <div class="obdelniky">
-        <h3>Akce</h3>
-        <p>Podporujeme místní projekty, školy a aktivity pro děti v regionu. Spojujeme techniku se vzděláváním a smysluplnou pomocí.</p>
-    </div>
-    <div class="obdelniky">
-        <h3>Kontakt</h3>
-        <p>Kontaktujte nás osobně ve Svitavách nebo telefonicky. Jsme rychle dostupní.</p>
-    </div>
+        <section id="uvod" class="section">
+            <h1 class="uvod_nad">3BComputer – spolehlivý partner pro vaše IT a internet</h1>
+
+            <div class="uvod_float">
+                <img src="./obrazky/stolni_pc.webp" class="uvod_obr" alt="Počítač">
+
+                <p class="uvod_pod">
+                    Vítejte na webu 3BComputer, s.r.o., odborníků na výpočetní techniku a internet ve Svitavách.
+                    Ať už potřebujete nový počítač, nastavit internet nebo spravit notebook, můžete se na nás obrátit.
+                </p>
+            </div>
+        </section>
+
+        <section id="o-nas" class="obdelniky section">
+            <h3>O nás</h3>
+            <p>Lokální IT firma ze Svitav zaměřená na prodej a servis techniky. Rychlá pomoc a srozumitelný přístup.</p>
+        </section>
+
+        <section id="nabidka" class="obdelniky section">
+            <h3>Nabídka</h3>
+            <p>Servis počítačů, připojení k internetu a moderní komunikační služby na jednom místě. Postaráme se o techniku, aby fungovala a neotravovala vás.</p>
+        </section>
+
+        <section id="akce" class="obdelniky section">
+            <h3>Akce</h3>
+            <p>Podporujeme místní projekty, školy a aktivity pro děti v regionu. Spojujeme techniku se vzděláváním a smysluplnou pomocí.</p>
+        </section>
+
+        <section id="kontakt" class="obdelniky section">
+            <h3>Kontakt</h3>
+            <p>Kontaktujte nás osobně ve Svitavách nebo telefonicky. Jsme rychle dostupní.</p>
+        </section>
+
+    </main>
 <!--
     <h1>Kdo jsme a proč to děláme</h1>
 

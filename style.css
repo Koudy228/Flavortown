@@ -1,5 +1,22 @@
+:root{
+    /* Barvy (jednou nastavíš, všude použiješ) */
+    --bg: rgb(12, 15, 20);
+    --text: whitesmoke;
+
+    --glass: rgba(34, 37, 44, 0.65);
+    --border: rgba(255, 255, 255, 0.08);
+
+    --cardA: rgba(24, 24, 70, 0.95);
+    --cardB: rgba(16, 16, 48, 0.95);
+
+    --accent: rgb(37, 99, 235);
+    --accentGlow: rgba(37, 99, 235, 0.35);
+
+    --shadow: rgba(0, 0, 0, 0.35);
+    --shadowSoft: rgba(0, 0, 0, 0.28);
+    }
 body{
-    background-color: rgb(12, 15, 20);
+    background-color: radial-gradient(900px 500px at 70% 20%, rgba(37,99,235,0.25), transparent 55%);
     color: whitesmoke;
     font-family: "Roboto", sans-serif;
     padding-top: 80px;
@@ -62,81 +79,148 @@ body{
 }
 */
 @media(max-width:650px){
+    *{ box-sizing: border-box; }
+    html{
+    scroll-behavior: smooth;
+    }
     body{
-        padding: 0;
-        margin: 20px;
+    margin: 0;
+    padding-top: 92px;
+    color: var(--text);
+    font-family: "Roboto", sans-serif;
+    background:
+        radial-gradient(900px 500px at 70% 20%, rgba(37, 99, 235, 0.25), transparent 55%),
+        var(--bg);
     }
-
+    .section{
+    scroll-margin-top: 110px;
+    }
+    .page{
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 0 18px 28px;
+    }
     .cela_navi{
-        position: fixed;
-        top: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-right: 40px;
-        background-color: rgba(34, 37, 44, 0.65);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        z-index: 1000;
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 24px);
+    height: 72px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px var(--shadow);
+    z-index: 1000;
     }
-
     .nav{
-        display: none;
+    display: none; 
     }
-
-    .menu_btn{
-        display: flex;
-        width: 50px;
-        height: 25px;
-        flex-direction: column;
-        justify-content: space-between;
-        cursor: pointer;
-    }
-
-    .menu_btn span{
-        height: 4px;
-        margin-right: 20px;
-        background-color: whitesmoke;
-        border-radius: 6px;
-    }
-
     .logo{
-        height: 85px;
+    height: 70px;
+    width: auto;
+    }
+    .menu_btn{
+    display: flex;
+    width: 44px;
+    height: 22px;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    }
+    .menu_btn span{
+    height: 3px;
+    background-color: var(--text);
+    border-radius: 999px;
+    opacity: 0.95;
     }
     .uvod_nad{
-        font-size: 25px;
-        margin-top: 125px;
-        max-width: 300px;
+    font-size: 26px;
+    line-height: 1.12;
+    letter-spacing: -0.2px;
+    margin: 22px 0 10px;
+    max-width: 340px;
+    }
+    .uvod_float{
+    position: relative;
     }
     .uvod_obr{
-        width: 250px;
-        float: right;
-        margin-top: -70px;
-        margin-right: -25px;
-        filter:
-        drop-shadow(0 0 20px rgb(19, 4, 59))
+    width: 250px;
+    float: right;
+    margin-top: -22px;
+    margin-right: -30px;
+    filter:
+        drop-shadow(0 0 20px rgba(19, 4, 59, 1))
         drop-shadow(0 0 20px rgba(54, 51, 246, 0.6));
     }
     .uvod_pod{
-        max-width: 240px;
-        font-size: 15px;
+    max-width: 260px;
+    font-size: 15px;
+    line-height: 1.5;
+    opacity: 0.92;
+    margin: 0;
+    }
+    .btn_primary, .btn_ghost{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 0 16px;
+    border-radius: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    transition: transform 0.15s ease, filter 0.15s ease, background-color 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    }
+    .btn_primary{
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 10px 24px var(--accentGlow);
+    }
+    .btn_ghost{
+    background: rgba(255,255,255,0.06);
+    color: var(--text);
+    border: 1px solid rgba(255,255,255,0.10);
+    }
+    .btn_primary:active,
+    .btn_ghost:active{
+    transform: scale(0.98);
+    filter: brightness(1.05);
     }
     .obdelniky{
-        background-color: rgb(24, 24, 70);
-        border-radius: 12px;
-        padding-left: 32px;
-        padding-right: 32px;
-        padding-bottom: 0.02px;
-        padding-top: 0.02px;
-        margin-top: 20px;
-        transition: transform 0.15s ease, background-color 0.15 ease, box-shadow 0.15s ease;
+    background: linear-gradient(180deg, var(--cardA), var(--cardB));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    margin-top: 14px;
+    box-shadow: 0 14px 30px var(--shadow);
+    transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    }
+    .obdelniky h3{
+    margin: 0 0 10px;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    }
+    .obdelniky p{
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.4;
+    font-size: 14px;
     }
     .obdelniky:active{
-        transform: scale(0.96);
-        background-color: rgb(18, 18, 55);
-        box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    transform: scale(0.985);
+    filter: brightness(1.06);
+    box-shadow: 0 10px 22px var(--shadowSoft);
     }
 }
