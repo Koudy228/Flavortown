@@ -16,7 +16,7 @@
     --shadowSoft: rgba(0, 0, 0, 0.28);
     }
 body{
-    background-color: radial-gradient(900px 500px at 70% 20%, rgba(37,99,235,0.25), transparent 55%);
+    background: radial-gradient(900px 500px at 70% 20%, rgba(37,99,235,0.25), transparent 55%), var(--bg);
     color: whitesmoke;
     font-family: "Roboto", sans-serif;
     padding-top: 80px;
@@ -89,8 +89,11 @@ body{
     color: var(--text);
     font-family: "Roboto", sans-serif;
     background:
-        radial-gradient(900px 500px at 70% 20%, rgba(37, 99, 235, 0.25), transparent 55%),
-        var(--bg);
+    radial-gradient(900px 500px at 70% 20%, rgba(37, 99, 235, 0.25), transparent 55%),
+    var(--bg);
+    }
+    body.no_scroll{
+        overflow: hidden;
     }
     .section{
     scroll-margin-top: 110px;
@@ -119,6 +122,64 @@ body{
     box-shadow: 0 10px 30px var(--shadow);
     z-index: 1000;
     }
+    .menu_overlay{
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 1500;
+    }
+    .side_menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 80vw;
+        max-width: 320px;
+        background: rgba(18, 20, 28, 0.98);
+        border-right: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transform: translateX(-100%);
+        transition: transform 220ms ease;
+        z-index: 1501;
+        padding: 14px;
+        box-shadow: 0 10px 30px var(--shadow);
+    }
+    .side_menu.is_open{
+        transform: translateX(0);
+    }
+    .side_menu_head{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 6px 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .side_menu_close{
+        background: transparent;
+        border: 0;
+        color: var(--text);
+        font-size: 20px;
+        padding: 6px 10px;
+        border-radius: 12px;
+    }
+    .side_menu_nav{
+        display: grid;
+        gap: 10px;
+        padding-top: 14px;
+    }
+    .side_link{
+        display: block;
+        color: var(--text);
+        text-decoration: none;
+        padding: 12px 12px;
+        border-radius: 14px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    .side_link:active{
+        transform: scale(0.99);
+    }
     .nav{
     display: none; 
     }
@@ -133,6 +194,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+    background: none;
     }
     .menu_btn span{
     height: 3px;
